@@ -528,8 +528,8 @@ Show a detailed token usage breakdown. Read the following files and present the 
    - When using token-log.jsonl, filter by exact timestamp (this is the whole point -- precise boundary)
    - When using stats-cache.json, filter by date >= reset day (day-level approximation)
    - Show the combined total and percentage of `limits.total` from config (single limit across all models)
-   - Also show breakdown by model family (opus, sonnet, haiku) for reference, but the percentage is against the single total limit
-   - Format large numbers: e.g., 12,345,678 = 12.3M
+   - Show exact token counts with comma separators (e.g., 5,284,301) -- do NOT round to 5.3M or 2.0M. The whole point of this report is precision. The status line already shows rounded numbers; the /tokens report should show the real numbers.
+   - For model breakdown, show exact count and percentage of the total for each family
 
 6. **Daily breakdown for current week**:
    - List each day that has data, showing date and tokens by model family
